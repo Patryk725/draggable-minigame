@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+    transition: background-color .2s ease;
+    animation: gradient-ride 5s linear infinite;
+    background-size: 200%;
+}
+
+@keyframes gradient-ride {
+    from {
+        background-position: 0% center;
+    } to {
+        background-position: -200% center;
+    }
+}
+
+a {
+    padding: 1rem 2rem;
+    display: block;
+    background-color: #eee;
+    text-decoration: none;
+    color: #333;
+    transition: transform .2s ease;   
+}
+
+a:hover {
+    transform: scale(1.2);
+}
+
+#card {
+    background-color: #ddd;
+    padding: 0 5rem;
+    border-radius: .2rem;
+    height: max(calc(100vh - 10rem), 500px);
+    overflow: auto;
+    transition: transform 2s ease;
+}
+
+#greetings {
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+#play-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#play {
+    padding: 1.5rem 5rem;
+    background-color: #E57F84;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-shadow: 0 0 .2rem black;
+    transition: transform .1s ease;
+}
+
+#play:hover {
+    transform: scale(1.05);
+    background-color: #f1969d;
+}
+
+#timer-option {
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#timer-option * {
+    text-align: center;
+}
+
+#timer-option #timer-hint {
+    color: #666;
+}
+
+#timer {
+    width: fit-content;
+    margin: auto;
+    padding: 1rem 0;
+    font-size: 2rem;
+    border: none;
+    outline: .3px solid #666;
+}
+
+#timer:focus {
+    outline: .3px solid #4297A0;
+    border: none;
+}
+
+#rec-color-choose {
+    padding: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+#recommended-colors {
+    padding-bottom: 4.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.recommended-color {
+    padding: 3rem;
+    border: 2px solid #000;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.choose-recommended-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    width: 100%;
+    height: 100%;
+    background-color: #22222230;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s ease-out;
+    color: #fff;
+    text-shadow: 0 0 .1rem #000;
+    user-select: none;
+}
+
+.recommended-color:hover .choose-recommended-color {
+    transform: translateY(0);
+}
+
+#color-1 {
+    background-color: #4297A0;
+}
+
+#color-2 {
+    background-color: #F4EAE6;
+}
+
+#color-3 {
+    background-color: #E57F84;
+}
+
+#custom-picker {
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+}
+
+#custom-color-option, #custom-gradient-option {
+    width: 100%;
+}
+
+#custom-color-title, #custom-gradient-title {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+#custom-color-input, #custom-gradient-input {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+input[type="color"] {
+    width: 20%;
+    height: calc(10vh);
+    outline: 1px solid #000;
+    background-color: transparent;
+    cursor: pointer;
+    transition: box-shadow .2s ease;
+}
+
+input[type="color"]:where(:focus, :hover) {
+    box-shadow: 0 0 .8rem .3rem #55555580;
+}
+
+#see-more-title {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+#credits {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-bottom: 4rem;
+}
+
+.counter {
+    padding: 1rem 2rem;
+    border: 2px solid #000;
+    font-weight: bold;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    text-shadow: 0 0 .1rem #fff;
+    background-color: #fff;
+    user-select: none;
+    transition: transform .2s ease;
+}
+
+.block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* default padding is 2rem */
+    /* but gaming is better at 3rem */
+    /* easy mode starts at 5rem */
+    padding: 5rem;
+    background-color: transparent;
+    border: 2px solid #fff;
+    outline: 3px solid #000;
+    border-radius: 50%;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* default padding is 3rem */
+    /* but gaming is better at 5rem */
+    /* easy mode starts on 7rem */
+    padding: 4.5rem;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 50%;
+    box-shadow: inset 0 0 1rem .5rem #fff;
+}
+
+#show-time {
+    position: fixed;
+    bottom: 2rem;
+    left: 40%;
+    font-size: 2rem;
+    font-weight: bold;
+    transform: translateX(-50%) translateY(200%);
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border: 2px solid #000;
+    transition: transform 2s ease;
+    user-select: none;
+}
+
+#show-points {
+    position: fixed;
+    bottom: 2rem;
+    left: 60%;
+    font-size: 2rem;
+    font-weight: bold;
+    transform: translateX(-50%) translateY(200%);
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border: 2px solid #000;
+    transition: transform 2s ease;
+    user-select: none;
+}
+
+#dps {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    transform: translateX(-50%) translateY(200%);
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border: 2px solid #000;
+    transition: transform 2s ease;
+    user-select: none;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Drag drop events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="card">
+
+        <div id="greetings">
+            <h1>Welcome to <span id="draggable" style="text-decoration: underline; text-shadow: 0 0 1px #000;">Draggable</span>!</h1>
+        </div>
+
+        <div id="play-button">
+            <button id="play">
+                Play a game
+            </button>
+        </div>
+
+        <div id="timer-option">
+            <h2>Choose gaming time</h2>
+            <p id="timer-hint"">in seconds</p>
+            <input type="number" id="timer" min="10" max="60" value="10">
+        </div>
+
+        <div id="rec-color-choose">
+            <h2>Recommended colors:</h2>
+        </div>
+        <div id="recommended-colors">
+            <div id="color-1" class="recommended-color">
+                <div class="choose-recommended-color" onclick="recommendedBg(color_1)">Choose</div>
+            </div>
+            <div id="color-2" class="recommended-color">
+                <div class="choose-recommended-color" onclick="recommendedBg(color_2)">Choose</div>
+            </div>
+            <div id="color-3" class="recommended-color" onclick="recommendedBg(color_3)">
+                <div class="choose-recommended-color">Choose</div>
+            </div>
+        </div>
+
+        <div id="custom-picker">
+            <div id="custom-color-option">
+                <div id="custom-color-title" class="show-more">
+                    <h2>Choose a custom color</h2>
+                </div>
+                <div id="custom-color-input">
+                    <input type="color" id="custom-color-picker" value="#4297A0">
+                </div>
+            </div>
+            <div id="custom-gradient-option">
+                <div id="custom-gradient-title">
+                    <h2>...or make your own gradient</h2>
+                </div>
+                <div id="gradients">
+                    <div id="custom-gradient-input">
+                        <input type="color" id="gradient-1" value="#4297A0">
+                        <input type="color" id="gradient-2" value="#F4EAE6">
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div id="see-more">
+                <h2 id="see-more-title">Social Media links:</h2>
+            </div>
+            <div id="credits">
+                <a 
+                href="https://www.youtube.com/channel/UCfDMQYsGcHJ-Bdgq2_kq1ow" target="_blank">YouTube</a>
+                <a 
+                href="https://github.com/Patryk725" target="_blank">Github</a>
+                <a 
+                href="https://budexit.wroclaw.pl/" target="_blank">BudexIT</a>
+            </div>
+        </div>
+        <div id="show-time">
+            00
+        </div>
+        <div id="show-points">
+            0
+        </div>
+        <div id="dps">
+            points per second: 0
+        </div>
+    <script src="main.js" defer></script>
+</body>
+</html>
